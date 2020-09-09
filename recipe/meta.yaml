@@ -1,5 +1,5 @@
 {% set name = "python-qinlingclient" %}
-{% set version = "5.1.0" %}
+{% set version = "5.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 56c6b53a5225a017dbfd8d7eed746f21906049d91f92ef6c5b948b2690330c90
+  sha256: 122687274c9e5fdceb660739ab0b07e5ce095a7a8c67866587d1ef7cc4fbd702
 
 build:
   number: 0
