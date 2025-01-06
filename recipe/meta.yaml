@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 122687274c9e5fdceb660739ab0b07e5ce095a7a8c67866587d1ef7cc4fbd702
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -18,9 +18,9 @@ requirements:
   host:
     - pbr !=2.1.0,>=2.0.0
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - pbr !=2.1.0,>=2.0.0
     - prettytable >=0.7.2
     - python-keystoneclient >=3.8.0
@@ -37,6 +37,8 @@ requirements:
     - oslo.serialization >=2.18.0,!=2.19.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - qinlingclient
 
